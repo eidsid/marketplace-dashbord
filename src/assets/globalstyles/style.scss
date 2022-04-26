@@ -8,3 +8,10 @@
 @mixin transation($time) {
     transition: all ease-in-out $time;
 }
+
+$mobile_width: 525px;
+@mixin mobile() {
+    @media (max-width: $mobile_width) {
+        @content;
+    }
+}
