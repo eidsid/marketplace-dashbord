@@ -58,4 +58,18 @@ $backgroundBG: #19162c;
             margin-top: auto;
         }
     }
+    @include mobile() {
+        width: 68px;
+        ul li {
+            margin: 7px 0;
+            a:hover {
+                &::before {
+                    width: 15px;
+                    height: 15px;
+                    top: 10px;
+                    left: -20px;
+                }
+            }
+        }
+    }
 }
