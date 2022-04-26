@@ -1,0 +1,10 @@
+@mixin flex($dir: row, $justify-content: center, $align-items: center) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin transation($time) {
+    transition: all ease-in-out $time;
+}
