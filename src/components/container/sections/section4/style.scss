@@ -1,0 +1,42 @@
+@import "assets/globalstyles/style.scss";
+.top-card {
+    color: wheat;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 1rem 2rem;
+    background-color: #19162d;
+    .top {
+        @include flex(row, space-between);
+        padding: 1rem 0;
+        .card-name {
+            font-weight: 900;
+            font-size: 3rem;
+            letter-spacing: 5px;
+        }
+        a {
+            color: red;
+            text-decoration: underline;
+        }
+    }
+    ul {
+        li {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 1rem;
+            &.bg {
+                background-color: #4b4a52ad;
+                box-shadow: 0 0 20px black;
+            }
+            .col {
+                @include flex(row, space-between);
+            }
+            &:nth-child(5) {
+                p {
+                    &:nth-child(2) {
+                        color: #f700a4;
+                    }
+                }
+            }
+        }
+    }
+}
