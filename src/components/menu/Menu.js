@@ -1,5 +1,5 @@
 import "./style.scss";
-import logo from "assets/img/logo.png";
+import logo from "assets/imgs/logo.png";
 import {
   FaDelicious,
   FaWallet,
