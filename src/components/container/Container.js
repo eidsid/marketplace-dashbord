@@ -8,8 +8,8 @@ import "./style.scss";
 const Container = () => {
   return (
     <div className="container">
-      <TopContainer />
       <div className="left">
+        <TopContainer />
         <Section2 />
         <Section3 />
       </div>

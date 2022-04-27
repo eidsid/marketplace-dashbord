@@ -3,4 +3,25 @@
     width: calc(100% - 100px);
     padding: 20px;
     padding-top: 30px;
+    margin-left: 100px;
+    @include flex();
+    .left {
+        width: 70%;
+        overflow-x: hidden;
+        height: fit-content;
+    }
+    .right {
+        width: 30%;
+    }
+    @include mobile {
+        margin-left: 68px;
+        flex-direction: column;
+        .left,
+        .right {
+            width: 100%;
+        }
+        .right {
+            @include flex();
+        }
+    }
 }
