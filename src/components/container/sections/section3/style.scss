@@ -1,0 +1,107 @@
+@import "assets/globalstyles/style.scss";
+$mainBGColor: rgba(170, 4, 120, 0.979);
+.main-content {
+    color: rgba(255, 255, 255, 0.822);
+    background-color: #0f0a22;
+    margin: 1rem 0;
+    border-radius: 0.5em;
+    box-shadow: 0 0 3 rrgba(0, 0, 0, 0.418);
+    padding: 1rem;
+    nav {
+        width: 100%;
+        @include flex(row, space-between);
+        span {
+            width: 150px;
+            @include flex();
+            gap: 1rem;
+            span {
+                border: 2px solid rgba(172, 168, 168, 0.651);
+                padding: 5px 10px;
+                border-radius: 10px;
+            }
+        }
+        ul {
+            @include flex();
+            gap: 1rem;
+            li {
+                border: 2px solid rgba(172, 168, 168, 0.651);
+                padding: 5px 10px;
+                border-radius: 10px;
+                font-weight: 700;
+                cursor: pointer;
+                &.active {
+                    background-color: $mainBGColor;
+                }
+            }
+        }
+    }
+    .cards {
+        margin-top: 1rem;
+        @include flex();
+        flex-wrap: wrap;
+        gap: 1rem;
+        .card {
+            width: 280px;
+            border-radius: 0.5em;
+            overflow: hidden;
+            background-color: #1f1936;
+            animation: cardAnim 1s ease-in-out forwards;
+            img {
+                width: 100%;
+                height: 150px;
+            }
+            .col {
+                @include flex(row, space-between);
+                padding: 0.7rem 1rem;
+                &.frist {
+                    font-weight: 700;
+                    margin: 1rem 0;
+                    .name {
+                        font-size: 1.3rem;
+                    }
+                    .hearts {
+                        span {
+                            color: $mainBGColor;
+                            margin-right: 0.5rem;
+                        }
+                    }
+                }
+                &.secend {
+                    div {
+                        text-align: center;
+                        p {
+                            color: rgba(255, 255, 255, 0.425);
+                        }
+                        span {
+                            color: $mainBGColor;
+                        }
+                    }
+                }
+                &.thered {
+                    button {
+                        color: white;
+                        padding: 10px 20px;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        &:nth-child(1) {
+                            background-color: $mainBGColor;
+                            border: none;
+                        }
+                        &:nth-child(2) {
+                            background: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes cardAnim {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
