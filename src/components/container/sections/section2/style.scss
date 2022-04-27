@@ -1,0 +1,47 @@
+@import "assets/globalstyles/style.scss";
+.banner {
+    height: 260px;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 0.5em;
+    box-shadow: 0 0 3 rrgba(0, 0, 0, 0.418);
+    .content {
+        float: right;
+        margin-right: 10%;
+        color: rgba(211, 211, 211, 0.863);
+        .title {
+            font-weight: bolder;
+            font-size: 3rem;
+        }
+        .price {
+            color: rgba(209, 2, 147, 0.979);
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .publisherName {
+            margin: 1rem 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        .offer {
+            @include flex(row, space-between);
+            max-width: 200px;
+            button {
+                background: linear-gradient( to bottom, rgba(212, 191, 206, 0.979) 1%, rgba(185, 3, 131, 0.979), rgba(124, 6, 89, 0.979));
+                color: inherit;
+                border-radius: 1rem;
+                padding: 10px 20px;
+                border: none;
+            }
+            span {
+                p:nth-child(1) {
+                    font-size: 1.2rem;
+                }
+                p:nth-child(2) {
+                    color: rgba(177, 2, 124, 0.979);
+                }
+            }
+        }
+    }
+}
