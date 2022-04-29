@@ -95,6 +95,20 @@ $mainBGColor: rgba(170, 4, 120, 0.979);
             }
         }
     }
+    @include mobile {
+        nav {
+            margin-top: 3rem;
+            flex-direction: column;
+            ul {
+                flex-wrap: wrap;
+                min-width: 230px;
+                margin: 1rem 0;
+            }
+        }
+        .cards .card {
+            min-width: 230px;
+        }
+    }
 }
 
 @keyframes cardAnim {

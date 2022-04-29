@@ -44,4 +44,43 @@
             }
         }
     }
+    @include mobile() {
+        .content {
+            float: center;
+            .title {
+                font-weight: bolder;
+                font-size: 2rem;
+            }
+            .price {
+                color: rgba(209, 2, 147, 0.979);
+                font-size: 1.2rem;
+                font-weight: 700;
+            }
+            .publisherName {
+                margin: 1rem 0;
+                font-size: 1.2rem;
+                font-weight: 700;
+            }
+            .offer {
+                @include flex(row, space-between);
+                gap: 1rem;
+                max-width: 200px;
+                button {
+                    background: linear-gradient( to bottom, rgba(212, 191, 206, 0.979) 1%, rgba(185, 3, 131, 0.979), rgba(124, 6, 89, 0.979));
+                    color: inherit;
+                    border-radius: 1rem;
+                    padding: 5px 10px;
+                    border: none;
+                }
+                span {
+                    p:nth-child(1) {
+                        font-size: 1.1rem;
+                    }
+                    p:nth-child(2) {
+                        color: rgba(177, 2, 124, 0.979);
+                    }
+                }
+            }
+        }
+    }
 }

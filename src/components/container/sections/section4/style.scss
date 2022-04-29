@@ -39,4 +39,17 @@
             }
         }
     }
+    @include mobile {
+        .top {
+            gap: 4rem;
+            .card-name {
+                font-weight: 900;
+                font-size: 1.4rem;
+                letter-spacing: 5px;
+            }
+            a {
+                width: 90px;
+            }
+        }
+    }
 }
