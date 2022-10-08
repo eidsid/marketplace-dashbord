@@ -5,7 +5,7 @@ $mediamScreen: 1700px;
     padding: 20px;
     padding-top: 30px;
     margin-left: 100px;
-    @include flex();
+    @include flex(row, center, flex-start);
     .left {
         width: 70%;
         overflow-x: hidden;
