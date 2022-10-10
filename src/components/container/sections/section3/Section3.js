@@ -5,8 +5,8 @@ import card3 from "assets/imgs/card3.jpg";
 import card4 from "assets/imgs/card4.jpg";
 import card5 from "assets/imgs/card5.jpg";
 import card6 from "assets/imgs/card6.jpg";
-import { FaHeart } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { Card } from "./card/Card";
 const Section3 = () => {
   const items = [
     {
@@ -67,15 +67,17 @@ const Section3 = () => {
 
   const [itemType, setItemType] = useState("all");
   const [FilterItems, setFilterdItems] = useState(items);
-
+  const handleItemsType = (type) => {
+    setItemType(type);
+  };
   const cardsDom = FilterItems.map((item) => (
     <Card item={item} key={item.id} />
   ));
   useEffect(() => {
-    if (itemType == "all") setFilterdItems(items);
+    if (itemType === "all") setFilterdItems(items);
     else {
       let filter = items.filter((item) =>
-        item.type == itemType ? item : null
+        item.type === itemType ? item : null
       );
       setFilterdItems(filter);
     }
@@ -88,26 +90,26 @@ const Section3 = () => {
         </span>
         <ul>
           <li
-            className={itemType == "all" ? "active" : null}
-            onClick={() => setItemType("all")}
+            className={itemType === "all" ? "active" : null}
+            onClick={() => handleItemsType("all")}
           >
             ALL
           </li>
           <li
-            className={itemType == "illustration" ? "active" : null}
-            onClick={() => setItemType("illustration")}
+            className={itemType === "illustration" ? "active" : null}
+            onClick={() => handleItemsType("illustration")}
           >
             illustration
           </li>
           <li
-            className={itemType == "art" ? "active" : null}
-            onClick={() => setItemType("art")}
+            className={itemType === "art" ? "active" : null}
+            onClick={() => handleItemsType("art")}
           >
             Art
           </li>
           <li
-            className={itemType == "game" ? "active" : null}
-            onClick={() => setItemType("games")}
+            className={itemType === "games" ? "active" : null}
+            onClick={() => handleItemsType("games")}
           >
             Games
           </li>
@@ -117,34 +119,5 @@ const Section3 = () => {
     </div>
   );
 };
-const Card = ({ item }) => {
-  return (
-    <div className="card">
-      <img src={item.img} alt={item.img} />
-      <div className="col frist">
-        <div className="name">{item.name}</div>
-        <div className="hearts">
-          <span>
-            <FaHeart />
-          </span>
-          {item.hearts}
-        </div>
-      </div>
-      <div className="col secend">
-        <div>
-          <p>Current Bid</p>
-          <span>{item.currentBid}</span>
-        </div>
-        <div>
-          <p>Ending in</p>
-          <span>{item.endingIn}</span>
-        </div>
-      </div>
-      <div className="col thered">
-        <button>place A MD</button>
-        <button>History</button>
-      </div>
-    </div>
-  );
-};
+
 export default Section3;
